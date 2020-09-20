@@ -24,7 +24,7 @@ score_audio.src="audio/score.mp3"
 
 let gap = 90;
 // click func
-document.addEventListener("keydown", moveUp);
+document.addEventListener("click", moveUp);
 function moveUp() {
    yPos -= 25;
    fly.play()
