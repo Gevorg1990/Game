@@ -91,7 +91,7 @@ function draw() {
    ctx.drawImage(bird, xPos, yPos)
    
    yPos += grav;
-   ctx.fillStyle = "000";
+   ctx.fillStyle = "red";
    ctx.font = "24px Verdana";
    ctx.fillText('score: ' + score, 10, cvs.height - 20)
    
