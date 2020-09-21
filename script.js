@@ -134,6 +134,14 @@ pipeBottom.onload = draw;
 
 
 
+document.addEventListener("click", moveUp);
+function moveUp() {
+   yPos -= 25;
+   fly.play()
+}
+
+// bloki
+
 
 
 
