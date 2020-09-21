@@ -24,7 +24,7 @@ score_audio.src="audio/score.mp3"
 
 let gap = 90;
 // click func
-document.addEventListener("click", moveUp);
+document.addEventListener("keydown", moveUp);
 function moveUp() {
    yPos -= 25;
    fly.play()
@@ -44,6 +44,7 @@ let xPos = 10;
 let yPos = 150;
 let grav = 1.5;
 let score = 0;
+let dop=0;
 
 function draw() {
    ctx.drawImage(bg, 0, 0,)
@@ -71,6 +72,10 @@ function draw() {
     }
       if (pipe[i].x == 5) {
          score++;
+         
+         if (score > dop) {
+            localStorage.setItem('num', dop++);
+         }
          score_audio.play();
       }
 
@@ -89,8 +94,57 @@ function draw() {
    ctx.fillStyle = "000";
    ctx.font = "24px Verdana";
    ctx.fillText('score: ' + score, 10, cvs.height - 20)
+   
+   ctx.fillText('top: ' + dop, 180, cvs.height - 20)
+
+
+
+  
+
+   
+
+
+   
+
+
+ 
 
    requestAnimationFrame(draw)
 }
 
+
+if (localStorage.getItem('num')!==null) {
+ 
+   let don = localStorage.getItem('num');
+  
+      dop = don;
+
+      
+   
+}
+
+
+
 pipeBottom.onload = draw;
+
+
+
+
+
+
+
+window.onload = function () {
+   let mas = ['ok',1, 5, 8, 45, 78, 4,'hello'];
+
+   let masFiltr = mas.filter(elem =>{
+      if (!+elem) {
+       return elem
+    }
+   })
+      
+   
+   console.log(masFiltr);
+   console.log(typeof masFiltr);
+   
+   }
+  
