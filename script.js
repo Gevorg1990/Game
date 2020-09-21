@@ -95,7 +95,7 @@ function draw() {
    ctx.font = "24px Verdana";
    ctx.fillText('score: ' + score, 10, cvs.height - 20)
    
-   ctx.fillText('record: ' + dop, 180, cvs.height - 20)
+   ctx.fillText('record: ' + dop, 140, cvs.height - 20)
 
 
 
