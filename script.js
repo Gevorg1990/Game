@@ -1,4 +1,5 @@
 let cvs = document.getElementById('canvas');
+
 let ctx = cvs.getContext('2d')
 
 let bird = new Image();
@@ -44,7 +45,9 @@ let xPos = 10;
 let yPos = 150;
 let grav = 1.5;
 let score = 0;
-let dop=0;
+let dop =0;
+
+
 
 function draw() {
    ctx.drawImage(bg, 0, 0,)
@@ -81,7 +84,7 @@ function draw() {
 
       if ( yPos + bird.height >= cvs.height - fg.height) {
          location.reload()
-         alert('stop')
+         alert('Game over')
       }
    }
 
@@ -91,14 +94,14 @@ function draw() {
    ctx.drawImage(bird, xPos, yPos)
    
    yPos += grav;
-   ctx.fillStyle = "red";
+   ctx.fillStyle = "#000";
    ctx.font = "24px Verdana";
    ctx.fillText('score: ' + score, 10, cvs.height - 20)
-   
+ 
    ctx.fillText('record: ' + dop, 140, cvs.height - 20)
 
 
-
+   
   
 
    
@@ -116,10 +119,10 @@ function draw() {
 if (localStorage.getItem('num')!==null) {
  
    let don = localStorage.getItem('num');
-  
+   
       dop = don;
 
-      
+     
    
 }
 
@@ -133,18 +136,5 @@ pipeBottom.onload = draw;
 
 
 
-window.onload = function () {
-   let mas = ['ok',1, 5, 8, 45, 78, 4,'hello'];
 
-   let masFiltr = mas.filter(elem =>{
-      if (!+elem) {
-       return elem
-    }
-   })
-      
-   
-   console.log(masFiltr);
-   console.log(typeof masFiltr);
-   
-   }
   
